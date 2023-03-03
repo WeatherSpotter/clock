@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<script type="text/javascript"> 
+  function display_c(){
+  var refresh=1000; // Refresh rate in milli seconds
+  mytime=setTimeout('display_ct()',refresh)
+  }
+  
+ function display_ct() {
+ var x = new Date()
+ var x1=x.toUTCString()// changing the display to UTC string
+ x1=x1.split(",").pop();
+ x1=x1.replace("GMT", "UTC")
+ document.getElementById('ct').innerHTML = x1;
+ document.getElementById('ct').style.fontSize='calc(4vw + 4vh + 2vmin)';
+ tt=display_c();
+ }
+  </script>
+  <body onload=display_ct();>
+    <span id='ct' ></span>
+ 
+
+</body>
+</html>
